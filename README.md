@@ -57,13 +57,16 @@ Built with Flask, HTML templates, and static assets (images, CSS, JS).
 (Add screenshots for homepage, gallery, and offers section here)
 
 ### Homepage
-![Homepage](screenshots/homepage.png)
-
-### Gallery
-![Gallery](screenshots/gallery.png)
+![Homepage](screenshots/scr.png)
 
 ### Offers
-![Offers](screenshots/offers.png)
+![Offers](screenshots/scr1.png)
+
+### Contacts
+![Contacts](screenshots/scr2.png)
+
+### Send Mail
+![Mail](screenshots/scr3.png)
 
 
 ### 📜 License  
