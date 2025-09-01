@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}إرسال طلب / ملف{% endblock %}
+
+{% block content %}
+<section class="py-12 bg-gray-50">
+  <div class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6 relative">
+
+    <!-- ✅ عنوان -->
+    <h2 class="text-3xl font-bold text-center text-primary mb-6">إرسال طلب / ملف للمعالجة</h2>
+
+    <!-- ✅ Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mb-4 space-y-2">
+          {% for category, msg in messages %}
+            <div class="p-3 rounded bg-green-100 text-green-800 text-center shadow-sm text-sm">
+              {{ msg }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- ✅ النموذج -->
+    <form method="POST" enctype="multipart/form-data" class="space-y-5">
+  {{ form.csrf_token }}
+
+  <div>
+    {{ form.name.label(class="block mb-1 font-medium text-gray-700") }}
+    {{ form.name(class="w-full border border-gray-300 rounded px-4 py-2") }}
+  </div>
+
+  <div>
+    {{ form.phone.label(class="block mb-1 font-medium text-gray-700") }}
+    {{ form.phone(class="w-full border border-gray-300 rounded px-4 py-2") }}
+  </div>
+
+  <div>
+    {{ form.message.label(class="block mb-1 font-medium text-gray-700") }}
+    {{ form.message(class="w-full border border-gray-300 rounded px-4 py-2") }}
+  </div>
+
+  <div>
+    {{ form.file.label(class="block mb-1 font-medium text-gray-700") }}
+    {{ form.file(class="w-full border border-gray-300 rounded px-4 py-2 bg-white") }}
+  </div>
+
+  <button type="submit" class="w-full bg-primary hover:bg-green-700 transition text-white py-2 rounded font-bold shadow">
+    إرسال الآن
+  </button>
+</form>
+
+  </div>
+</section>
+{% endblock %}

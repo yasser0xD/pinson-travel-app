@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="وكالة سياحية لتنظيم الرحلات وخدمات التأشيرات داخل وخارج الجزائر.">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet" />
+  <title>{% block title %}Pinson Travel{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <style>
+  .logo-text .pinson {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1c8f8f;
+    margin-bottom: -10PX;
+  }
+  .logo-text .travel {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1c8f8f;
+    position: relative;
+    bottom: 2px;
+
+  }
+  a.flex.items-center {
+  padding-inline-start: 1.5rem; /* تحريك كامل الشعار من الحافة */
+}
+/* تحسين مظهر الشعار */
+.font-logo {
+  font-family: 'Cairo', sans-serif;
+  line-height: 1.1;
+}
+
+</style>
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+          tajawal: ['Tajawal', 'sans-serif'],
+          logo: ['Cairo'],
+         }
+,
+          colors: {
+            primary: '#1c8f8f',
+            accent: '#fcd34d',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Flowbite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-tajawal">
+
+<!-- ✅ Navbar احترافي ومحسن -->
+<nav class="bg-white shadow-sm sticky top-0 z-50 transition-shadow duration-300" id="main-navbar">
+  <div class="max-w-screen-2xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- ✅ الشعار - صورة + نص -->
+    <a href="/" class="flex items-center gap-2">
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" class="h-10 w-auto" alt="Logo">
+      <div class="leading-tight">
+        <div class="text-xl font-bold  text-primary -mb-2 font-logo">Pinson</div>
+        <div class="text-md font-bold travel text-primary font-logo pl-1">travel</div>
+      </div>
+    </a>
+
+    <!-- ✅ قائمة الروابط (سطح المكتب) -->
+    <div class="hidden md:flex flex-1 justify-center gap-8 text-lg font-semibold">
+      <a href="/" class="text-gray-700 hover:text-primary transition">الرئيسية</a>
+      <a href="/offers" class="text-gray-700 hover:text-primary transition">العروض</a>
+      <a href="/services" class="text-gray-700 hover:text-primary transition">الخدمات</a>
+      <a href="/gallery" class="text-gray-700 hover:text-primary transition">المعرض</a>
+      <a href="/contact" class="text-gray-700 hover:text-primary transition">تواصل معنا</a>
+    </div>
+
+    <!-- ✅ زر إرسال (ثابت) -->
+    <div class="hidden md:flex">
+      <a href="/feedback" class="px-5 py-2 bg-primary hover:bg-teal-800 text-white rounded-full font-semibold shadow transition">
+        إرسال
+      </a>
+    </div>
+
+    <!-- ✅ زر الهاتف -->
+    <div class="md:hidden flex items-center gap-3">
+      <a href="/feedback" class="px-4 py-2 bg-primary hover:bg-teal-700 text-white rounded-full text-sm font-semibold shadow transition">
+        إرسال
+      </a>
+      <button id="menu-toggle" class="text-gray-700">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ✅ قائمة الهاتف -->
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 pt-2 text-base font-medium">
+    <a href="/" class="text-gray-700 hover:text-primary">الرئيسية</a>
+    <a href="/offers" class="text-gray-700 hover:text-primary">العروض</a>
+    <a href="/services" class="text-gray-700 hover:text-primary">الخدمات</a>
+    <a href="/gallery" class="text-gray-700 hover:text-primary">المعرض</a>
+    <a href="/contact" class="text-gray-700 hover:text-primary">اتصل بنا</a>
+  </div>
+</nav>
+
+
+<!-- ✅ محتوى الصفحة -->
+{% block content %}{% endblock %}
+
+
+<!-- ✅ Footer احترافي -->
+<footer class="bg-white border-t mt-16">
+  <div class="max-w-screen-lg mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-2 text-center md:text-right text-md text-gray-600">
+    <div data-aos="fade-up">
+      <h3 class="font-bold text-xl text-gray-700 mb-2">Pinson Travel</h3>
+      <p>وكالة سياحة وسفر محترفة منذ 2023. نقدم خدمات التأشيرات، الرحلات، حجوزات الطيران والفنادق.</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="100">
+      <h3 class="font-semibold text-gray-700 mb-2">روابط سريعة</h3>
+      <ul class="space-y-1">
+        <li><a href="/offers" class="hover:text-blue-600">العروض</a></li>
+        <li><a href="/services" class="hover:text-blue-600">الخدمات</a></li>
+        <li><a href="/contact" class="hover:text-blue-600">اتصل بنا</a></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h3 class="font-semibold text-gray-700 mb-2">معلومات الاتصال</h3>
+      <p>الحي الإداري (موبيليس سابقًا) - المسيلة</p>
+      <p><a href="mailto:Pinson.travel@gmail.com" class="text-blue-600 hover:underline">Pinson.travel@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="text-center py-4 text-sm text-gray-400 border-t">
+    &copy; {{ current_year }} جميع الحقوق محفوظة لـ Pinson Travel.
+  </div>
+</footer>
+
+<!-- ✅ Toggle Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Flowbite JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  
+  // إضافة ظل للنافبار عند التمرير
+  const navbar = document.getElementById('main-navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('shadow-md');
+    } else {
+      navbar.classList.remove('shadow-md');
+    }
+  });
+
+
+  AOS.init({ once: true });
+
+</script>
+
+</body>
+</html>

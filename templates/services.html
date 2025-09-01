@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block title %}خدماتنا - Pinson Travel{% endblock %}
+
+{% block content %}
+<section class="py-10 bg-gray-50">
+  <div class="max-w-screen-xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-primary mb-10">خدماتنا السياحية</h2>
+
+    <!-- شبكة الخدمات -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-right">
+
+      <!-- خدمة التأشيرات -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+        <div class="text-4xl text-primary mb-4"><img src="{{ url_for('static', filename='icons/passport.svg') }}" class="w-20 h-20"></div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">خدمة التأشيرات</h3>
+        <p class="text-gray-600 text-sm">
+          نوفّر لك مواعيد فيزا شنغن (فرنسا، إسبانيا، ألمانيا...) مع دعم كامل في جمع الوثائق وملء النماذج.
+        </p>
+      </div>
+
+      <!-- حجز الطيران -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+        <div class="text-4xl text-primary mb-4"> <img src="{{ url_for('static', filename='icons/airplane.svg') }}" class="w-20 h-20"> </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">حجوزات الطيران</h3>
+        <p class="text-gray-600 text-sm">
+          نحجز لك تذاكر طيران بأسعار مميزة مع أفضل شركات الطيران وبتواريخ تناسبك.
+        </p>
+      </div>
+
+      <!-- حجز الفنادق -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+        <div class="text-4xl text-primary mb-4"><img src="{{ url_for('static', filename='icons/hotel.svg') }}" class="w-20 h-20"></div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">حجوزات الفنادق</h3>
+        <p class="text-gray-600 text-sm">
+          إقامة مريحة بأسعار تنافسية في أرقى الفنادق حول العالم.
+        </p>
+      </div>
+
+      <!-- مواعيد فيزا شنغن -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+        <div class="text-4xl text-primary mb-4"><img src="{{ url_for('static', filename='icons/rdv.svg') }}" class="w-20 h-20"></div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">مواعيد فيزا شنغن</h3>
+        <p class="text-gray-600 text-sm">
+          نساعدك في حجز مواعيد فيزا شنغن بشكل رسمي وسريع، مع نصائح مضمونة لقبول الملف.
+        </p>
+      </div>
+
+      <!-- دعم واستشارة -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+        <div class="text-4xl text-primary mb-4"><img src="{{ url_for('static', filename='icons/folder.svg') }}" class="w-20 h-20"></div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">مرافقة في تحضير الملفات</h3>
+        <p class="text-gray-600 text-sm">
+          نراجع ملفك بعناية، نملأ النماذج، ونجهز كل الوثائق المطلوبة بشكل احترافي.
+        </p>
+      </div>
+
+    
+
+    </div>
+
+    <!-- زر تواصل -->
+    <div class="mt-12">
+      <a href="/contact" class="inline-block bg-primary text-white px-6 py-3 rounded-full shadow hover:bg-teal-700 transition">
+         تواصل معنا الآن
+      </a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
